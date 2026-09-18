@@ -6,7 +6,7 @@ const closeBtn = document.getElementById("closeChat");
 const form = document.getElementById("chatForm");
 const input = document.getElementById("chatInput");
 const messages = document.getElementById("messages");
-
+const conversationHistory = [];
 function openChat(){
   overlay.classList.add("open");
   overlay.setAttribute("aria-hidden","false");
@@ -46,12 +46,19 @@ async function askAssistant(question){
     const res=await fetch(CHAT_API,{
       method:"POST",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({message:question})
+      body:JSON.stringify({
+  message: question,
+  history: conversationHistory
+})
     });
     const data=await res.json();
     loading.remove();
     if(!res.ok) throw new Error(data.error||"Request failed");
     addMessage(data.answer || "Answer awm lo. Please try again.", "bot");
+    conversationHistory.push(
+  { role: "user", content: question },
+  { role: "assistant", content: data.answer || "" }
+);
   }catch(err){
     loading.remove();
     addMessage("Chatbot backend-ah problem a awm. WhatsApp hmangin kan contact theih bawk.", "bot");
