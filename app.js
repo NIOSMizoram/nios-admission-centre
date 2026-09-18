@@ -1,4 +1,4 @@
-const CHAT_API = "https://YOUR-WORKER.your-subdomain.workers.dev/chat";
+const CHAT_API = "https://nios-admission-ai.lsventuresmz.workers.dev/chat";
 
 const overlay = document.getElementById("chatOverlay");
 const openButtons = [document.getElementById("openChat"), document.getElementById("chatFab")];
