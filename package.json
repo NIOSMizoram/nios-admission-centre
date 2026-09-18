@@ -1,0 +1,11 @@
+{
+  "name": "nios-admission-centre",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "upload-kb": "node scripts/upload-kb.mjs"
+  },
+  "dependencies": {
+    "openai": "^5.0.0"
+  }
+}

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NIOS Admission Centre — simple guidance for Secondary and Senior Secondary admission.">
+  <title>NIOS Admission Centre</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <img src="assets/logo.png" alt="NIOS Admission Centre logo">
+      <span>NIOS Admission Centre</span>
+    </a>
+    <a class="top-wa" href="https://wa.me/916001785085" target="_blank" rel="noopener">WhatsApp</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">NIOS 2026–27</span>
+        <h1>NIOS admission guidance, made simple.</h1>
+        <p>Secondary & Senior Secondary admission, subjects, fees, exams and student support — explained simply.</p>
+        <div class="hero-actions">
+          <button class="primary" id="openChat">Ask NIOS Assistant</button>
+          <a class="secondary" href="https://wa.me/916001785085" target="_blank" rel="noopener">Talk on WhatsApp</a>
+        </div>
+        <p class="micro">English & Mizo support • AI guidance based on the NIOS knowledge base</p>
+      </div>
+      <div class="hero-card">
+        <div class="mini-icon">N</div>
+        <strong>Need help choosing?</strong>
+        <span>Ask about eligibility, subjects, Stream 1–4, TOC, TMA, ODE, exams and more.</span>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><strong>Secondary</strong><span>Class X pathway</span></div>
+      <div><strong>Senior Secondary</strong><span>Class XII pathway</span></div>
+      <div><strong>English + Mizo</strong><span>Simple counselling</span></div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="section-heading">
+        <span class="eyebrow">FAQ</span>
+        <h2>Common questions</h2>
+        <p>Mizo tawngin thil pawimawh te hi hetah chhiar theih a ni.</p>
+      </div>
+
+      <div class="faq-list">
+        <details>
+          <summary>NIOS admission tan kum engzat atangin nge apply theih?</summary>
+          <p>Secondary tan minimum age 14 a ni. Senior Secondary tan minimum age 15 a ni. Qualification leh document requirement pawh penuhi tur.</p>
+        </details>
+        <details>
+          <summary>Stream 1 chu eng nge?</summary>
+          <p>Stream 1 chu normal online admission route a ni. Eligibility condition te penuhi learner-te tan hman tur a ni.</p>
+        </details>
+        <details>
+          <summary>Senior Secondary fee engzat nge?</summary>
+          <p>Prospectus 2026–27 fee table-ah 5 subjects tan category hrang hrangin fee a hran. Chatbot-ah current official fee te zawt theih a ni. Centre margin/service charge hi official NIOS fee-ah tel lo.</p>
+        </details>
+        <details>
+          <summary>ODE chu exam rang tak tih theihna em?</summary>
+          <p>ODE chu On Demand Examination a ni. Mahse eligibility, subject, designated centre leh seat availability check hmasa tur. Immediate exam guarantee a ni lo.</p>
+        </details>
+        <details>
+          <summary>NIOS certificate hi university-ah hman theih em?</summary>
+          <p>NIOS Prospectus-in higher education leh other purposes tan certificate acceptance a sawi. Mahse university/course tinin eligibility criteria an hran theuh thei, chuvangin target institution requirement check tur.</p>
+        </details>
+        <details>
+          <summary>Ka zawhna chu FAQ-ah a awm lo. Engtin nge?</summary>
+          <p>Chat button hmangin NIOS Assistant zawt rawh. English emaw Mizo-in zawh theih a ni.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <a class="wa-float" href="https://wa.me/916001785085" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <span>WhatsApp</span>
+  </a>
+
+  <button class="chat-fab" id="chatFab" aria-label="Open NIOS Assistant">Ask AI</button>
+
+  <div class="chat-overlay" id="chatOverlay" aria-hidden="true">
+    <section class="chat-panel" role="dialog" aria-modal="true" aria-labelledby="chatTitle">
+      <div class="chat-head">
+        <div>
+          <span class="eyebrow">NIOS Assistant</span>
+          <h2 id="chatTitle">Ask in English or Mizo</h2>
+        </div>
+        <button class="close" id="closeChat" aria-label="Close chat">×</button>
+      </div>
+
+      <div class="quick-prompts">
+        <button data-prompt="Stream 1 chu eng nge?">Stream 1</button>
+        <button data-prompt="Senior Secondary subject combination ka hriat duh.">Subjects</button>
+        <button data-prompt="NIOS fee engzat nge?">Fees</button>
+        <button data-prompt="ODE chu eng nge?">ODE</button>
+      </div>
+
+      <div class="messages" id="messages">
+        <div class="msg bot">Hello. NIOS admission, subject, fee, exam or eligibility chungchangin zawt rawh. English emaw Mizo-in chhang theih ka ni.</div>
+      </div>
+
+      <form class="chat-form" id="chatForm">
+        <input id="chatInput" autocomplete="off" placeholder="Zawhna ziak rawh..." maxlength="1200" required>
+        <button type="submit">Send</button>
+      </form>
+      <p class="chat-note">AI answers are based on the configured NIOS knowledge base. Current deadlines and notifications should be verified with NIOS.</p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
