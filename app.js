@@ -7,6 +7,13 @@ const form = document.getElementById("chatForm");
 const input = document.getElementById("chatInput");
 const messages = document.getElementById("messages");
 const conversationHistory = [];
+const newChatBtn = document.getElementById("newChat");
+newChatBtn.addEventListener("click", () => {
+  conversationHistory.length = 0;
+  messages.innerHTML = "";
+  addMessage("New chat started. Eng ema zawt rawh.", "bot");
+  input.focus();
+});
 function openChat(){
   overlay.classList.add("open");
   overlay.setAttribute("aria-hidden","false");
