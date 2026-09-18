@@ -88,4 +88,3 @@ Never put `OPENAI_API_KEY` inside `index.html`, `app.js`, or any GitHub Pages fi
 
 The chatbot uses OpenAI File Search against the configured vector store. If you update the Knowledge Base later, upload the new file and point the Worker to the updated vector store/file.
 
-The official NIOS fee is kept separate from Centre margin/service charge. Add your margin later in a separate pricing layer.
