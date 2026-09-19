@@ -62,6 +62,28 @@ async function askAssistant(question){
     loading.remove();
     if(!res.ok) throw new Error(data.error||"Request failed");
     addMessage(data.answer || "Answer awm lo. Please try again.", "bot");
+
+if (Array.isArray(data.suggestions) && data.suggestions.length > 0) {
+  const suggestionBox = document.createElement("div");
+  suggestionBox.className = "suggestion-box";
+
+  data.suggestions.slice(0, 3).forEach(question => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "suggestion-btn";
+    button.textContent = question;
+
+    button.addEventListener("click", () => {
+      input.value = question;
+      form.requestSubmit();
+    });
+
+    suggestionBox.appendChild(button);
+  });
+
+  messages.appendChild(suggestionBox);
+  messages.scrollTop = messages.scrollHeight;
+}
     conversationHistory.push(
   { role: "user", content: question },
   { role: "assistant", content: data.answer || "" }
