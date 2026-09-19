@@ -11,7 +11,7 @@ const newChatBtn = document.getElementById("newChat");
 newChatBtn.addEventListener("click", () => {
   conversationHistory.length = 0;
   messages.innerHTML = "";
-  addMessage("New chat started. Eng ema zawt rawh.", "bot");
+  addMessage("New chat started. Eng emaw zawt rawh.", "bot");
   input.focus();
 });
 function openChat(){
@@ -48,7 +48,7 @@ async function askAssistant(question){
     addMessage("Chatbot backend is not connected yet. Please set CHAT_API in app.js after deploying the Cloudflare Worker.", "bot");
     return;
   }
-  const loading=addMessage("Ka zawt mek...","bot");
+  const loading=addMessage("Lo nghak det aw...","bot");
   try{
     const res=await fetch(CHAT_API,{
       method:"POST",
