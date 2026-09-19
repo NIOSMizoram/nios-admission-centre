@@ -261,15 +261,17 @@ details p{padding:0 3px 18px;margin:0;color:#667085;line-height:1.65}
 .chat-form input{
   min-width:0;
   flex:1;
+  height:48px;
   border:1px solid #d7dfeb;
   border-radius:12px;
-  padding:12px 13px;
+  padding:0 13px;
   outline:none
+}
 }
 
 .chat-form input:focus{border-color:#7892c7}
 
-..chat-form button{
+.chat-form button{
   border:0;
   background:var(--navy);
   color:#fff;
