@@ -37,10 +37,17 @@ document.querySelectorAll(".quick-prompts button").forEach(btn=>{
 function addMessage(text,type){
   const div=document.createElement("div");
   div.className=`msg ${type}`;
-  div.textContent=text;
+
+  const cleanText = text
+    .replace(/\*\*/g, "")
+    .replace(/^#+\s*/gm, "");
+
+  div.textContent = cleanText;
+
   messages.appendChild(div);
-  messages.scrollTop=messages.scrollHeight;
+  messages.scrollTop = messages.scrollHeight;
   return div;
+}
 }
 
 async function askAssistant(question){
